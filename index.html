@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-red-950 p-3">
+    <main class="bg-white p-3 rounded-md">
+        <div class="mb-6">
+            <div>
+                <input 
+                type="text" 
+                placeholder="O que está buscando..."
+                class="w-full h-[40px] border-2 border-gray-400 focus:border-red-950 
+                outline-none rounded-md duration-200"
+                >
+            </div>
+            <div class="w-[50px] h-[50px] bg-red-950 rounded-full fixed bottom-6 right-3 flex justify-center items-center z-50 fill-white">
+                <box-icon type='solid' name='filter-alt' ></box-icon>
+            </div>
+            <div id="overlay" class="bg-black opacity-0 invisible fixed top-0 left-0 z-40 duration-200"></div>
+            <div id="gaveta" class="w-9/12 h-full bg-white fixed top-0 -right-full z-40 duration-200"></div>
+        </div>
+        <section id="produtos" class="grid md:grid-cols-2 lg:grid-cols-4 gap-3"></section>
+
+    </main>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
