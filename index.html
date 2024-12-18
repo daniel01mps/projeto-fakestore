@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        
                     }
                 }
             }
@@ -19,25 +19,41 @@
     </script>
 </head>
 
-<body class="bg-red-950 p-3">
+<body class="bg-violet-700 p-3">
     <main class="bg-white p-3 rounded-md">
+        <!-- busca -->
         <div class="mb-6">
             <div>
                 <input 
-                type="text" 
-                placeholder="O que está buscando..."
-                class="w-full h-[40px] border-2 border-gray-400 focus:border-red-950 
-                outline-none rounded-md duration-200"
-                >
+                    type="text" 
+                    placeholder="O que está buscando..."
+                    class="w-full h-[40px] border-2 border-gray-400 focus:border-violet-700 outline-none rounded-md pl-3 duration-200"
+                />
             </div>
-            <div class="w-[50px] h-[50px] bg-red-950 rounded-full fixed bottom-6 right-3 flex justify-center items-center z-50 fill-white">
-                <box-icon type='solid' name='filter-alt' ></box-icon>
+            <!-- butao do filter -->
+            <div 
+                onclick="showFilter()"
+                class="w-[50px] h-[50px] bg-violet-700 rounded-full fixed bottom-6 right-3 flex justify-center items-center z-50 fill-white"
+            >
+                <box-icon type='solid' name='filter-alt'></box-icon>
             </div>
-            <div id="overlay" class="bg-black opacity-0 invisible fixed top-0 left-0 z-40 duration-200"></div>
-            <div id="gaveta" class="w-9/12 h-full bg-white fixed top-0 -right-full z-40 duration-200"></div>
+            <!-- cortina escura -->
+            <div id="overlay" onclick="showFilter()" class="w-full h-full bg-black opacity-0 invisible fixed top-0 left-0 z-40 duration-200"></div>
+            <!-- parte branca -->
+            <div id="gaveta" class="w-9/12 h-full bg-white fixed top-0 -right-full z-40 duration-200">
+                <select>
+                    <option>categoria a</option>
+                    <option>categoria b</option>
+                    <option>categoria c</option>
+                </select>
+                <select>
+                    <option>Melhor avaliado</option>
+                    <option>Menor preço</option>
+                </select>
+            </div>
         </div>
-        <section id="produtos" class="grid md:grid-cols-2 lg:grid-cols-4 gap-3"></section>
-
+        <!-- lista de produtos -->
+        <section id="produtos" class="grid gap-3 md:grid-cols-2 lg:grid-cols-4 ">vazia</section>
     </main>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="index.js"></script>
